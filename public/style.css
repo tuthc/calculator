@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	background-color: rgb(18, 18, 18);
+	color: rgb(230, 230, 230);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calculatorContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0 auto;
+	width: 256px;
+	text-align: center;
+	background-color: rgb(75, 75, 75);
+	border: 4px solid rgb(75, 75, 75);
+	border-radius: 4px;
+}
+
+.showDisplay {
+	height: 50px;
+	line-height: 50px;
+	width: 248px;
+	background-color: rgb(75, 75, 75);
+	color: rgb(240, 240, 240);
+	font-size: 26px;
+	text-align: right;
+	overflow: hidden;
+	/* test */
+	/* border: 1px solid red; */
+	/* margin-top: 4px;  */
+}
+
+.keypad {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: minmax(60px, auto);
+}
+
+button {
+	background-color: rgb(170, 170, 170);
+	margin: 4px;
+	border: 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.highlight {
+	background-color: lightskyblue;
+}
+
+#clear {
+	grid-column: 1/4;
+}
+
+#equals {
+	grid-column: 2/5;
+}
