@@ -3,9 +3,10 @@ export default class Calculator {
 		this.total = 0;
 
 		this.clear();
-		
-		if (!this.total)
-			this.total = 0 + total;
+
+		if (!this.total && total !== undefined)
+			if (total !== undefined || total !== null)
+				this.total = 0 + total;
 	}
 	
 	clear() { this.total = 0; }
@@ -19,7 +20,9 @@ export default class Calculator {
 	divide(value) {
 		if (value !== 0) 
 			this.total /= value;
-		else 
-			this.total = "error";
+		else {
+			console.log("error")
+			this.clear();
+		}
 	}
 }
