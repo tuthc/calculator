@@ -8,9 +8,7 @@ export default class Calculator {
 			this.total = 0 + total;
 	}
 	
-	clear() {
-		this.total = 0;
-	}
+	clear() { this.total = 0; }
 
 	add(value) { this.total += value; }
 
