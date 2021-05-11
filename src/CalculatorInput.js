@@ -1,5 +1,5 @@
 export default class CalculatorInput {
-	constructor(calculator, current, operator) {
+	constructor(calculator, current = null, operator = "") {
 		this.intialCurrent = current;
 		this.intialOperator = operator;
 		
