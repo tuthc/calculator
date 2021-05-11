@@ -73,7 +73,6 @@ test("Calculator's divide", () => {
 	calculator.divide(5);					// 10 / 5
 	expect(calculator.total).toBe(2);		// = 2
 	
-	// (...) 0 after calculator.clear()
 	calculator.divide(0);					// 2 / 0
-	expect(calculator.total).toBe(0);		// = 0 
+	expect(calculator.total).toBe("error");	// = "error" 
 });

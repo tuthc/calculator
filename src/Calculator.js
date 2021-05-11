@@ -20,9 +20,7 @@ export default class Calculator {
 	divide(value) {
 		if (value !== 0) 
 			this.total /= value;
-		else {
-			console.log("error")
-			this.clear();
-		}
+		else
+			this.total = "error";
 	}
 }
