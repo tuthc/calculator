@@ -35,45 +35,26 @@ function App() {
 	}
 
 	function handleOperator_v2(operator) {
-		// function update(operator) {
-			calculatorInput.changeOperator(operator);
-			calculatorInputHook.changeOperatorState(calculatorInput.operator);
-			calculatorInputHook.changeCurrentInputState(calculatorInput.current);
-			calculatorHook.changeTotalState(calculator.total);
-		// }
-
-		// switch (operator) {
-		// 	case "+":
-		// 		update(operator);
-		// 		break;
-		// 	case "-":
-		// 		update(operator);
-		// 		break;
-		// 	case "*":
-		// 		update(operator);
-		// 		break;
-		// 	case "/":
-		// 		update(operator);
-		// 		break;
-		// }
+		calculatorInput.changeOperator(operator);
+		updateStates();
 	}
 
 	function handleNumber_v2(value) {
 		calculatorInput.chooseNumber(value);
-		calculatorInputHook.changeOperatorState(calculatorInput.operator);
-		calculatorInputHook.changeCurrentInputState(calculatorInput.current);
-		calculatorHook.changeTotalState(calculator.total);
+		updateStates();
 	}
 
 	function handleClear_v2() {
 		calculatorInput.clear();
-		calculatorInputHook.changeOperatorState(calculatorInput.operator);
-		calculatorInputHook.changeCurrentInputState(calculatorInput.current);
-		calculatorHook.changeTotalState(calculator.total);
+		updateStates();
 	}
 
 	function handleEquals_v2() {
 		calculatorInput.equals();
+		updateStates();
+	}
+
+	function updateStates() {		
 		calculatorInputHook.changeOperatorState(calculatorInput.operator);
 		calculatorInputHook.changeCurrentInputState(calculatorInput.current);
 		calculatorHook.changeTotalState(calculator.total);

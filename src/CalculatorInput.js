@@ -81,8 +81,8 @@ export default class CalculatorInput {
 			}
 
 			if (this.operator === "/") {
-					this.calculator.divide(this.current);
-					reset();
+				this.calculator.divide(this.current);
+				reset();
 			}
 		}
 	}
