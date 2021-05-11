@@ -1,14 +1,16 @@
 export default class CalculatorInput {
 	constructor(calculator, current, operator) {
-		console.log("calcInp", current, operator);
-
 		this.intialCurrent = current;
 		this.intialOperator = operator;
 		
 		this.current = this.intialCurrent;
 		this.operator = this.intialOperator;
-
+		
 		this.calculator = calculator;
+		
+		if (this.calculator.total === "error") {
+			this.clear();
+		}
 	}
 
 	clear() {
@@ -37,11 +39,8 @@ export default class CalculatorInput {
 				this.current = null;
 				break;
 			case "/":
-				if (this.current !== 0) {
 					this.calculator.divide(this.current);
 					this.current = null;
-				}
-				// TODO: if current = 0
 				break;
 		}
 
@@ -49,16 +48,13 @@ export default class CalculatorInput {
 	}
 
 	chooseNumber(value) {
-		if (this.operator === "") {
+		if (this.operator === "")
 			this.calculator.total = Number(this.calculator.total + "" + value); // add digit
-		}
 		else {
-			if (this.current === null) {
+			if (this.current === null)
 				this.current = value;
-			}
-			else {
+			else
 				this.current = Number(this.current + "" + value); // add digit
-			}
 		}
 	}
 
@@ -85,11 +81,8 @@ export default class CalculatorInput {
 			}
 
 			if (this.operator === "/") {
-				if (this.current !== 0) {
 					this.calculator.divide(this.current);
 					reset();
-				}
-				// TODO: if current = 0
 			}
 		}
 	}

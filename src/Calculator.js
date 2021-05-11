@@ -1,7 +1,5 @@
 export default class Calculator {
 	constructor(total) {
-		console.log("calculator created");
-		
 		this.total = 0;
 
 		this.clear();
@@ -21,9 +19,9 @@ export default class Calculator {
 	multiply(value) { this.total *= value; }
 
 	divide(value) {
-		if (value !== 0) {
+		if (value !== 0) 
 			this.total /= value;
-		}
-		// TODO: if b = 0
+		else 
+			this.total = "error";
 	}
 }

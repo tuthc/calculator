@@ -35,27 +35,27 @@ function App() {
 	}
 
 	function handleOperator_v2(operator) {
-		function update(operator) {
+		// function update(operator) {
 			calculatorInput.changeOperator(operator);
 			calculatorInputHook.changeOperatorState(calculatorInput.operator);
 			calculatorInputHook.changeCurrentInputState(calculatorInput.current);
 			calculatorHook.changeTotalState(calculator.total);
-		}
+		// }
 
-		switch (operator) {
-			case "+":
-				update(operator);
-				break;
-			case "-":
-				update(operator);
-				break;
-			case "*":
-				update(operator);
-				break;
-			case "/":
-				update(operator);
-				break;
-		}
+		// switch (operator) {
+		// 	case "+":
+		// 		update(operator);
+		// 		break;
+		// 	case "-":
+		// 		update(operator);
+		// 		break;
+		// 	case "*":
+		// 		update(operator);
+		// 		break;
+		// 	case "/":
+		// 		update(operator);
+		// 		break;
+		// }
 	}
 
 	function handleNumber_v2(value) {
@@ -67,8 +67,6 @@ function App() {
 
 	function handleClear_v2() {
 		calculatorInput.clear();
-		console.log("op: " + calculatorInput.operator);
-		console.log("cu: " + calculatorInput.current);
 		calculatorInputHook.changeOperatorState(calculatorInput.operator);
 		calculatorInputHook.changeCurrentInputState(calculatorInput.current);
 		calculatorHook.changeTotalState(calculator.total);
@@ -94,7 +92,8 @@ function App() {
 				handleNumber_v2={handleNumber_v2}
 			/>
 
-			<br></br>
+
+			{/* testing */}
 			<button onClick={() => { setDevState(prevState => prevState + 1) }}>update</button>
 			<div>t: {Math.floor(calculator.total * 10000) / 10000}</div>
 			<div>o: {calculatorInputHook.operatorState}</div>
