@@ -1,20 +1,9 @@
 import React from "react";
 
-
 function CalculatorComponent(props) {
-
-	// console.log(props.calculationState);
-
 	return (
 		<>
 			<div className="calculatorContainer">
-				{/* <input
-					className="showDisplay"
-					type="text"
-					disabled
-					value={props.current || props.total}
-				/> */}
-
 				<div className="showDisplay">{props.current || props.total}</div>
 
 				<div className="keypad">
@@ -33,7 +22,6 @@ function CalculatorComponent(props) {
 					<button onClick={() => { props.handleNumber_v2(3); }}>3</button>
 					<button onClick={() => { props.handleOperator_v2("+"); }} className="highlight">+</button>
 					<button onClick={() => { props.handleNumber_v2(0); }}>0</button>
-					{/* <button >.</button> */}
 					<button onClick={props.handleEquals_v2} className="highlight" id="equals">=</button>
 				</div>
 
@@ -41,12 +29,5 @@ function CalculatorComponent(props) {
 		</>
 	);
 }
-
-// function Keypad(props) {
-// 	return (
-		
-// 	)
-// }
-
 
 export default CalculatorComponent;

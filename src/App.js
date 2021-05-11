@@ -73,7 +73,6 @@ function App() {
 				handleNumber_v2={handleNumber_v2}
 			/>
 
-
 			{/* testing */}
 			<button onClick={() => { setDevState(prevState => prevState + 1) }}>update</button>
 			<div>t: {Math.floor(calculator.total * 10000) / 10000}</div>
