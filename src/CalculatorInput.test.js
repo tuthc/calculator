@@ -110,6 +110,34 @@ test("CalculationInput's equals", () => {
 	expect(calculatorInput.calculator.total).toBe(7);
 	expect(calculatorInput.operator).toBe("");
 	expect(calculatorInput.current).toBe(null);
+
+	// - 
+	calculatorInput.calculator.total = 10;
+	calculatorInput.operator = "-";
+	calculatorInput.current = 4;
+	calculatorInput.equals();
+	expect(calculatorInput.calculator.total).toBe(6);
+	expect(calculatorInput.operator).toBe("");
+	expect(calculatorInput.current).toBe(null);
+
+	// *
+	calculatorInput.calculator.total = 12;
+	calculatorInput.operator = "*";
+	calculatorInput.current = 3;
+	calculatorInput.equals();
+	expect(calculatorInput.calculator.total).toBe(36);
+	expect(calculatorInput.operator).toBe("");
+	expect(calculatorInput.current).toBe(null);
+
+	// /
+	calculatorInput.calculator.total = 20;
+	calculatorInput.operator = "/";
+	calculatorInput.current = 5;
+	calculatorInput.equals();
+	expect(calculatorInput.calculator.total).toBe(4);
+	expect(calculatorInput.operator).toBe("");
+	expect(calculatorInput.current).toBe(null);
+
 });
 
 test("CalculationInput's changeOperator", () => {
@@ -141,5 +169,32 @@ test("CalculationInput's changeOperator", () => {
 	calculatorInput.changeOperator("+");
 	expect(calculatorInput.calculator.total).toBe(-8);
 	expect(calculatorInput.operator).toBe("+");
+	expect(calculatorInput.current).toBe(null);
+
+	// -
+	calculatorInput.calculator.total = 22;
+	calculatorInput.operator = "+";
+	calculatorInput.current = 8;
+	calculatorInput.changeOperator("-");
+	expect(calculatorInput.calculator.total).toBe(30);
+	expect(calculatorInput.operator).toBe("-");
+	expect(calculatorInput.current).toBe(null);
+
+	// *
+	calculatorInput.calculator.total = 15;
+	calculatorInput.operator = "/";
+	calculatorInput.current = 3;
+	calculatorInput.changeOperator("*");
+	expect(calculatorInput.calculator.total).toBe(5);
+	expect(calculatorInput.operator).toBe("*");
+	expect(calculatorInput.current).toBe(null);
+
+	// /
+	calculatorInput.calculator.total = 14;
+	calculatorInput.operator = "*";
+	calculatorInput.current = 10;
+	calculatorInput.changeOperator("/");
+	expect(calculatorInput.calculator.total).toBe(140);
+	expect(calculatorInput.operator).toBe("/");
 	expect(calculatorInput.current).toBe(null);
 });
