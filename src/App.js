@@ -34,22 +34,22 @@ function App() {
 		}
 	}
 
-	function handleOperator_v2(operator) {
+	function handleOperator(operator) {
 		calculatorInput.changeOperator(operator);
 		updateStates();
 	}
 
-	function handleNumber_v2(value) {
+	function handleNumber(value) {
 		calculatorInput.chooseNumber(value);
 		updateStates();
 	}
 
-	function handleClear_v2() {
+	function handleClear() {
 		calculatorInput.clear();
 		updateStates();
 	}
 
-	function handleEquals_v2() {
+	function handleEquals() {
 		calculatorInput.equals();
 		updateStates();
 	}
@@ -67,10 +67,10 @@ function App() {
 				current={calculatorInputHook.currentInputState}
 				operator={calculatorInputHook.operatorState}
 
-				handleEquals_v2={handleEquals_v2}
-				handleClear_v2={handleClear_v2}
-				handleOperator_v2={handleOperator_v2}
-				handleNumber_v2={handleNumber_v2}
+				handleEquals={handleEquals}
+				handleClear={handleClear}
+				handleOperator={handleOperator}
+				handleNumber={handleNumber}
 			/>
 
 			{/* testing */}
